@@ -732,7 +732,7 @@ class LanguageDetector:
         try:
             probability = language_models[language]["frequency"][mask][0]
         except IndexError:
-            pass
+            probability = language_models[language]["frequency"].min()
 
         self._cache[language][ngram] = probability
 
